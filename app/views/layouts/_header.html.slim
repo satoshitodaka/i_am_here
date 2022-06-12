@@ -1,0 +1,24 @@
+/! Navbar
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  /! Container wrapper
+  .container
+    /! Navbar brand
+    a.navbar-brand.me-2 href="https://mdbgo.com/" 
+      img alt=("MDB Logo") height="16" loading="lazy" src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" style=("margin-top: -1px;") /
+    /! Toggle button
+    button.navbar-toggler aria-controls="navbarButtonsExample" aria-expanded="false" aria-label=("Toggle navigation") data-mdb-target="#navbarButtonsExample" data-mdb-toggle="collapse" type="button" 
+      i.fas.fa-bars
+    /! Collapsible wrapper
+    #navbarButtonsExample.collapse.navbar-collapse
+      /! Left links
+      ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        li.nav-item
+          a.nav-link href="#"  Dashboard
+      /! Left links
+      .d-flex.align-items-center
+        button.btn.btn-link.px-3.me-2 type="button" 
+          | Login
+        button.btn.btn-primary.me-3 type="button" 
+          | Sign up for free
+        a.btn.btn-dark.px-3 href="https://github.com/mdbootstrap/mdb-ui-kit" role="button" 
+          i.fab.fa-github

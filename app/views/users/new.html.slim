@@ -1,0 +1,19 @@
+  / < style="height: calc(100vh - 58.59px); min-height: 400px;" class="d-flex align-items-center">
+  container
+    .row.justify-content-center
+      .col-xl-5.col-md-8
+        = form_with model: @user, url: signup_path, class: 'bg-white  rounded-5 shadow-5-strong p-5' do |f|
+          = render 'shared/error_messages', object: @user
+          .form-outline.mb-4
+            = f.email_field :email, class: 'form-control'
+            = f.label :email, class: 'form-label'
+          .form-outline.mb-4
+            = f.text_field :username, class: 'form-control'
+            = f.label :username, class: 'form-label'
+          .form-outline.mb-4
+            = f.password_field :password, class: 'form-control'
+            = f.label :password, class: 'form-label'
+          .form-outline.mb-4
+            = f.password_field :password_confirmation, class: 'form-control'
+            = f.label :password_confirmation, class: 'form-label'
+          = f.submit class: 'btn btn-primary btn-block'
