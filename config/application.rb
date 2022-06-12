@@ -33,6 +33,11 @@ module IAmHere
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.generators do |g|
+      g.helper false
+      g.skip_routes false
+      g.assets false
+    end
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
   end
