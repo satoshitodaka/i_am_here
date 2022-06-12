@@ -63,4 +63,4 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 end
 
-Selenium::WebDriver::Chrome::Service.driver_path = '/usr/local/bin/chromedriver'
+# Selenium::WebDriver::Chrome::Service.driver_path = '/usr/local/bin/chromedriver'
