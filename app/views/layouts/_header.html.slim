@@ -16,9 +16,19 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
           a.nav-link href="#"  Dashboard
       /! Left links
       .d-flex.align-items-center
-        button.btn.btn-link.px-3.me-2 type="button" 
-          | Login
-        button.btn.btn-primary.me-3 type="button" 
-          | Sign up for free
+        = link_to 'Login', login_path, class: 'btn btn-link px-3 me-2'
+        = link_to 'Sign up for free', signup_path, class: 'btn btn-primary me-3'
         a.btn.btn-dark.px-3 href="https://github.com/mdbootstrap/mdb-ui-kit" role="button" 
           i.fab.fa-github
+        /! Avatar
+        .dropdown
+          a#navbarDropdownMenuAvatar.dropdown-toggle.d-flex.align-items-center.hidden-arrow aria-expanded="false" data-mdb-toggle="dropdown" href="#" role="button" 
+            img.rounded-circle alt=("Black and White Portrait of a Man") height="25" loading="lazy" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" /
+          ul.dropdown-menu.dropdown-menu-end aria-labelledby="navbarDropdownMenuAvatar" 
+            li
+              a.dropdown-item href="#" My profile
+            li
+              a.dropdown-item href="#" Settings
+            li
+              = link_to 'ログアウト', logout_path, class: 'dropdown-item', data: { turbo_method: :delete, turbo_confirm: 'ログアウトします' }
+
