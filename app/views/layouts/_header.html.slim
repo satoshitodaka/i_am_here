@@ -4,8 +4,8 @@ nav id="header" class="navbar navbar-expand-lg navbar-light bg-light bg-light"
   /! Container wrapper
   .container
     /! Navbar brand
-    a.navbar-brand.me-2 href="https://mdbgo.com/" 
-      img alt=("MDB Logo") height="16" loading="lazy" src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" style=("margin-top: -1px;") /
+    = link_to root_path, class: 'navbar-brand me-2' do 
+      = image_tag 'logo.png', height: 30 
     /! Toggle button
     button.navbar-toggler aria-controls="navbarButtonsExample" aria-expanded="false" aria-label=("Toggle navigation") data-mdb-target="#navbarButtonsExample" data-mdb-toggle="collapse" type="button" 
       i.fas.fa-bars
