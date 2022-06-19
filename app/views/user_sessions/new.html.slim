@@ -1,0 +1,12 @@
+.d-flex.align-items-center style=("height: calc(100vh - 58.59px); min-height: 400px;") 
+  .container
+    .row.justify-content-center
+      .col-xl-5.col-md-8
+        = form_with url: login_path, class: 'bg-white  rounded-5 shadow-5-strong p-5', id: 'login-form' do |f|
+          .form-outline.mb-4
+            = f.email_field :email, class: 'form-control'
+            = f.label :email, User.human_attribute_name(:email), class: 'form-label'
+          .form-outline.mb-4
+            = f.password_field :password, class: 'form-control'
+            = f.label :password, User.human_attribute_name(:password), class: 'form-label'
+          = f.submit 'ログイン', class: 'btn btn-primary btn-block'

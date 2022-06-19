@@ -33,5 +33,19 @@ module IAmHere
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.generators do |g|
+      g.helper false
+      g.skip_routes false
+      g.assets false
+    end
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+    config.i18n.default_locale = :ja
+    # 翻訳ファイルへのパスはいらないっぽい？
+    # config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb, yml}').to_s]
+
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+    
+    config.generators.template_engine = :slim
   end
 end

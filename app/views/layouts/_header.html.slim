@@ -1,0 +1,33 @@
+/! Navbar
+nav#header.navbar.navbar-expand-lg.navbar-light.bg-light
+  /! Container wrapper
+  .container
+    /! Navbar brand
+    = link_to root_path, class: 'navbar-brand me-2' do 
+      = image_tag 'logo.png', height: 30 
+    /! Toggle button
+    button.navbar-toggler aria-controls="navbarButtonsExample" aria-expanded="false" aria-label=("Toggle navigation") data-mdb-target="#navbarButtonsExample" data-mdb-toggle="collapse" type="button" 
+      i.fas.fa-bars
+    /! Collapsible wrapper
+    #navbarButtonsExample.collapse.navbar-collapse
+      /! Left links
+      ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        li.nav-item
+          a.nav-link href="#"  Dashboard
+      /! Left links
+      .d-flex.align-items-center
+        - unless logged_in?
+          = link_to 'ログイン', login_path, class: 'btn btn-link px-3 me-2'
+          = link_to 'サインアップ', signup_path, class: 'btn btn-primary me-3'
+        - if logged_in?
+          /! Avatar
+          #header-avatar-dropdown.dropdown
+            a#navbarDropdownMenuAvatar.dropdown-toggle.d-flex.align-items-center.hidden-arrow aria-expanded="false" data-mdb-toggle="dropdown" href="#" role="button" 
+              img.rounded-circle alt=("Black and White Portrait of a Man") height="25" loading="lazy" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" /
+            ul.dropdown-menu.dropdown-menu-end aria-labelledby="navbarDropdownMenuAvatar" 
+              li
+                a.dropdown-item href="#"  My profile
+              li
+                a.dropdown-item href="#"  Settings
+              li
+                = link_to 'ログアウト', logout_path, class: 'dropdown-item', data: { turbo_method: :delete, turbo_confirm: 'ログアウトします' }
